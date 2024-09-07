@@ -15,5 +15,5 @@ End-to-end dropouts imputation on single-cell RNA-Seq data with differentiable c
 
 ## Umap comparisons
 
-
+![image](https://github.com/PPDPQ/E2EGraphImpute/blob/main/umap00_all.jpg)
 
