@@ -1,5 +1,5 @@
 # scE2EGAE
-scE2EGAE: Improving Single-cell RNA-Seq Data Analysis with Cell-Graph-Learnable Graph Autoencoder Based on Differentiable Graph Sampling  
+scE2EGAE: Improving Single-cell RNA-Seq Data Analysis with Cell-Graph-Learnable Graph Autoencoder Using Differentiable Graph Sampling  
 
 ## Hyperparameters 
 | Datasets | Num_Epochs | Patience | K | Distance_Measure | AE_Dim | GAE_Dim | Dropout_GAE | LR    | Alpha  | Beta | MSE_V2 | 
