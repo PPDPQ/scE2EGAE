@@ -164,7 +164,6 @@ class GAE(torch.nn.Module):
         return x
     
 # Autoencoder and Graph Autoencoder using ZINB loss
-# Modified from https://github.com/DHUDBlab/scDSC/tree/master
 class GaussianNoise(nn.Module):
     def __init__(self, sigma=0):
         super(GaussianNoise, self).__init__()
