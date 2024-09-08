@@ -1,5 +1,5 @@
 # scE2EGAE
-End-to-end dropouts imputation on single-cell RNA-Seq data with differentiable cell-cell graph learning graph-autoencoder
+scE2EGAE: Improving Single-cell RNA-Seq Data Analysis with Cell-Graph-Learnable Graph Autoencoder Based on Differentiable Graph Sampling  
 
 ## Hyperparameters 
 | Datasets | Num_Epochs | Patience | K | Distance_Measure | AE_Dim | GAE_Dim | Dropout_GAE | LR    | Alpha  | Beta | MSE_V2 | 
