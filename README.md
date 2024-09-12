@@ -1,6 +1,8 @@
 # scE2EGAE
 Enhancing Single-cell RNA-Seq Data Analysis through an End-to-End Cell-Graph-Learnable Graph Autoencoder with Differentiable Edge Sampling  
 
+![image](https://github.com/PPDPQ/E2EGraphImpute/blob/main/overview.jpg)
+
 ## Hyperparameters 
 | Datasets | Num_Epochs | Patience | K | Distance_Measure | AE_Dim | GAE_Dim | Dropout_GAE | LR    | Alpha  | Beta | MSE_V2 | 
 |----------|------------|----------|---|------------------|--------|---------|-------------|-------|--------|------|--------|
