@@ -15,6 +15,5 @@ Enhancing Single-cell RNA-Seq Data Analysis through an End-to-End Cell-Graph-Lea
 | Tirosh   | 800        | 10       | 1 | Hyperbolic       | 128    | 128     | 0           | 0.003 | 0.001  | 1    | False  |
 | AD       | 1500       | 20       | 1 | Hyperbolic       | 128    | 64      | 0           | 0.003 | 0.001  | 1    | False  |
 
-## Umap comparisons
 
 
