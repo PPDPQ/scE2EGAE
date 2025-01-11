@@ -35,7 +35,7 @@ Enhancing Single-cell RNA-Seq Data Analysis through an End-to-End Cell-Graph-Lea
    
    pip install scipy==1.9.3
 
-### 3. If you have raw data, you can use the notebooks in the /data_prep folder. If you do not have them, due to GitHub's file upload size limit of 25MB, we have uploaded a processed Zeisel dataset to the "/dataset" folder. Please try running our code using this dataset.
+### 3. If you have raw data, you can use the notebooks in the /data_prep folder. If you do not have them, due to GitHub's file upload size limit of 25MB, we have uploaded a processed Zeisel dataset to the "/dataset" folder. You can try running our code using this dataset.
 
 ### 4. Run the "Main.ipynb" notebook cell by cell.
 
