@@ -3,24 +3,40 @@ Enhancing Single-cell RNA-Seq Data Analysis through an End-to-End Cell-Graph-Lea
 
 ## How to run the code
 1. First, we create a Anaconda environment:
+   
    conda create -n pytorch python=3.9
+   
    conda activate pytorch
    
 2. Then, install the needed packages:
+   
    conda install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia
+   
    conda install pyg -c pyg
+   
    pip install anndata==0.8.0
+   
    pip install notebook
+   
    pip install h5py==3.7.0
+   
    pip install loompy==3.0.7
+   
    pip install matplotlib==3.7.1
+   
    pip install numpy==1.23.4
+   
    pip install pandas==1.5.1
+   
    pip install scanpy==1.9.3
+   
    pip install scikit-learn==1.1.3
+   
    pip install scipy==1.9.3
 
-3. If you have raw data, you can use the notebooks in the data
+3. If you have raw data, you can use the notebooks in the /data_prep folder. If you do not have them, due to GitHub's file upload size limit of 25MB, we have uploaded a processed Zeisel dataset to the "/dataset" folder. Please try running our code using this dataset.
+
+4. 
    
 
 
