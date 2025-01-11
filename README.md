@@ -2,13 +2,14 @@
 Enhancing Single-cell RNA-Seq Data Analysis through an End-to-End Cell-Graph-Learnable Graph Autoencoder with Differentiable Edge Sampling  
 
 ## How to run the code
-1. First, we create a Anaconda environment:
+
+### 1. First, we create an Anaconda environment:
    
    conda create -n pytorch python=3.9
    
    conda activate pytorch
    
-2. Then, install the needed packages:
+### 2. Then, install the needed packages:
    
    conda install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia
    
@@ -34,13 +35,28 @@ Enhancing Single-cell RNA-Seq Data Analysis through an End-to-End Cell-Graph-Lea
    
    pip install scipy==1.9.3
 
-3. If you have raw data, you can use the notebooks in the /data_prep folder. If you do not have them, due to GitHub's file upload size limit of 25MB, we have uploaded a processed Zeisel dataset to the "/dataset" folder. Please try running our code using this dataset.
+### 3. If you have raw data, you can use the notebooks in the /data_prep folder. If you do not have them, due to GitHub's file upload size limit of 25MB, we have uploaded a processed Zeisel dataset to the "/dataset" folder. Please try running our code using this dataset.
 
-4. 
+### 4. Run the "Main.ipynb" notebook cell by cell.
+
+## Introduction about code scripts and hyperparameters 
+
+### Codes
+
+   distances.py: functions used for distances metrix calculation
+
+   modules.py: codes of all the modules we used
+
+   losses.py: codes of the loss functions
+
+   imputation_model.py: the intergrated model comprises from the modules
+
+   train.py: the pytorch train wrapper codes
+
+   Main.ipynb: codes to train the model and some simple visualization
    
+### Hyperparameters: please follow this table when initializing the model
 
-
-## Hyperparameters 
 | Datasets | Num_Epochs | Patience | K | Distance_Measure | AE_Dim | GAE_Dim | Dropout_GAE | LR    | Alpha  | Beta | MSE_V2 | 
 |----------|------------|----------|---|------------------|--------|---------|-------------|-------|--------|------|--------|
 | Klein    | 500        | 20       | 3 | Hyperbolic       | 128    | 2000    | 0           | 0.003 | 0.0005 | 1    | False  | 
