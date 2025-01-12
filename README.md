@@ -45,7 +45,10 @@ Enhancing Single-cell RNA-Seq Data Analysis through an End-to-End Cell-Graph-Lea
 
    distances.py: functions used for distances metrix calculation
 
-   modules.py: codes of all the modules we used
+   modules.py: codes of all the modules we used. The modules.py mainly contains the following classes:
+               a) EdgeSamplingGumbel(nn.Module): For edge sampling \n
+               b) GAE(torch.nn.Module): The graph autoencoder for single-cell RNAseq data denoising \n
+               c) ZINBAE(Module): The DCA module for projecting single-cell features (counts) into a lower-dimensional space.
 
    losses.py: codes of the loss functions
 
