@@ -94,7 +94,7 @@ class EdgeSamplingGumbel(nn.Module):
         y = (y_hard - y_soft).detach() + y_soft  
 
         # obtain top-k factors  
-        logprobs, indices = torch.topk(y, self.k, dim=1) 
+        logprobs, indices = torch.topk(y_soft, self.k, dim=1) 
         #logprobs, indices = torch.topk(y, _k, dim=1) 
 
         rows = torch.arange(num_nodes).view(num_nodes, 1).to(distance_mx.device).repeat(1, self.k)  
