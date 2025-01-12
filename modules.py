@@ -77,31 +77,34 @@ class EdgeSamplingGumbel(nn.Module):
         return edges, logprobs.view(-1)
     '''
     
-    def gumbel_top_k(self, distance_mx): 
-        #_k = torch.round(torch.clamp(self.k, 0, 10)).int().detach()
-        num_nodes = distance_mx.shape[0]  
-        temperature = torch.clamp(self.temperature, 0, 5)  
-        logits = -distance_mx * torch.exp(temperature)  
-        gumbel_noise = -torch.log(-torch.log(torch.rand_like(logits)))  
-        logits_with_gumbel = (logits + gumbel_noise) / temperature  
-        y_soft = torch.nn.functional.softmax(logits_with_gumbel, dim=1)  
-
-        # use straight-through estimator  
-        hard_indices = torch.argmax(y_soft, dim=1)  
-        y_hard = torch.zeros_like(y_soft).scatter_(1, hard_indices.unsqueeze(1), 1.0)  
-
-        # use hard samples in the forward pass and soft samples for the backward pass  
-        y = (y_hard - y_soft).detach() + y_soft  
-
-        # obtain top-k factors  
-        logprobs, indices = torch.topk(y_soft, self.k, dim=1) 
-        #logprobs, indices = torch.topk(y, _k, dim=1) 
-
-        rows = torch.arange(num_nodes).view(num_nodes, 1).to(distance_mx.device).repeat(1, self.k)  
-        #rows = torch.arange(num_nodes).view(num_nodes, 1).to(distance_mx.device).repeat(1, _k)  
-        edges = torch.stack((rows.view(-1), indices.view(-1)), -2)  
-
+    def gumbel_top_k(self, distance_mx):
+        num_nodes = distance_mx.shape[0]
+        temperature = torch.clamp(self.temperature, 2, 5)
+        logits = -distance_mx * torch.exp(temperature)
+        gumbel_noise = -torch.log(-torch.log(torch.rand_like(logits)))
+        
+        logits_with_gumbel = (logits + gumbel_noise) / temperature
+       
+        y_soft = torch.nn.functional.softmax(logits_with_gumbel, dim=1)
+       
+        # Obtain top-k indices
+        logprobs, topk_indices = torch.topk(y_soft, self.k, dim=1)
+ 
+        # Create y_hard using top-k indices
+        y_hard = torch.zeros_like(y_soft)
+        y_hard[torch.arange(num_nodes).unsqueeze(1), topk_indices] = 1.0
+       
+        # Use hard samples in the forward pass and soft samples for the backward pass (The straight-through estimator)
+        y = (y_hard - y_soft).detach() + y_soft
+ 
+        # Obtain row indices for edges
+        rows = torch.arange(num_nodes).view(num_nodes, 1).to(distance_mx.device).repeat(1, self.k)
+ 
+        # Create edges representation
+        edges = torch.stack((rows.view(-1), topk_indices.view(-1)), -2)
+ 
         return edges, logprobs.view(-1)
+
 
 # Flatten layer
 class Flatten(nn.Module):
