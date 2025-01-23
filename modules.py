@@ -59,24 +59,6 @@ class EdgeSamplingGumbel(nn.Module):
 
         return x, edge_index, edge_weights, adj
     
-    '''
-    def gumbel_top_k(self, distance_mx):
-        num_nodes = distance_mx.shape[0]
-        distance_mx = distance_mx * torch.exp(torch.clamp(self.temperature,-5,5))
-        #distance_mx = torch.exp(-self.temperature * distance_mx) + self.eps
-        
-        q = torch.rand_like(distance_mx)
-        lq = (distance_mx-torch.log(-torch.log(q)))
-        #lq=torch.nn.functional.gumbel_softmax(distance_mx)
-        
-        logprobs, indices = torch.topk(-lq,self.k)  
-    
-        rows = torch.arange(num_nodes).view(num_nodes,1).to(distance_mx.device).repeat(1,self.k)
-        edges = torch.stack((indices.view(-1),rows.view(-1)),-2)
-        
-        return edges, logprobs.view(-1)
-    '''
-    
     def gumbel_top_k(self, distance_mx):
         num_nodes = distance_mx.shape[0]
         temperature = torch.clamp(self.temperature, 2, 5)
