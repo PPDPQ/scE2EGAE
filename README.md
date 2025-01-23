@@ -1,7 +1,7 @@
 # scE2EGAE
 Enhancing Single-cell RNA-Seq Data Analysis through an End-to-End Cell-Graph-Learnable Graph Autoencoder with Differentiable Edge Sampling  
 
-[The manuscript: ](https://doi.org/10.21203/rs.3.rs-5279794/v1)
+[The preprint manuscript at Research Square: ](https://doi.org/10.21203/rs.3.rs-5279794/v1)
 
 ## Introduction about code scripts and hyperparameters 
 
