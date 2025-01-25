@@ -73,9 +73,9 @@ Enhancing Single-cell RNA-Seq Data Analysis through an End-to-End Cell-Graph-Lea
    
    pip install scipy==1.9.3
 
-### 5. Clone the repo to your PC:
+### 3. Clone the repo to your PC:
 
-    git clone https://github.com/PPDPQ/scE2EGAE
+    git clone https://github.com/PPDPQ/scE2EGAE.git
 
 ### 4. If you have raw data, you can use the notebooks in the /data_prep folder. If you do not have them, due to GitHub's file upload size limit of 25MB, we have uploaded a processed Zeisel dataset to the "/dataset" folder. You can try running our code using this dataset.
 
